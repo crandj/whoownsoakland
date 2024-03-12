@@ -36,13 +36,14 @@
         <script src="js/leaflet-control-geocoder.Geocoder.js"></script>
         <script src="js/leaflet.markercluster.js"></script>
         <script src="data/EPARESPIRATORYRISK_1.js"></script>
-        <script src="data/HOUSEHOLDINCOME_2.js"></script>
-        <script src="data/RENTEROROWNER_3.js"></script>
-        <script src="data/DEMOGRAPHICS_4.js"></script>
-        <script src="data/VENTURES_5.js"></script>
-        <script src="data/INVESTMENT_6.js"></script>
-        <script src="data/SHELL_7.js"></script>
-        <script src="data/PORTFOLIO_8.js"></script>
+        <script src="data/VACANTHOUSINGUNITS_2.js"></script>
+        <script src="data/MEDIANHOUSEHOLDINCOME_3.js"></script>
+        <script src="data/RENTBURDEN_4.js"></script>
+        <script src="data/DEMOGRAPHICS_5.js"></script>
+        <script src="data/VENTURES_6.js"></script>
+        <script src="data/INVESTMENT_7.js"></script>
+        <script src="data/SHELL_8.js"></script>
+        <script src="data/PORTFOLIO_9.js"></script>
         <script>
         var highlightLayer;
         function highlightFeature(e) {
@@ -61,7 +62,7 @@
         }
         var map = L.map('map', {
             zoomControl:true, maxZoom:28, minZoom:1
-        }).fitBounds([[37.70996327875775,-122.39338501640309],[37.86811847901985,-122.07835930846575]]);
+        }).fitBounds([[37.70633581134033,-122.39041816470161],[37.86449876680638,-122.07539245676428]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
@@ -268,7 +269,7 @@
         });
         bounds_group.addLayer(layer_EPARESPIRATORYRISK_1);
         map.addLayer(layer_EPARESPIRATORYRISK_1);
-        function pop_HOUSEHOLDINCOME_2(feature, layer) {
+        function pop_VACANTHOUSINGUNITS_2(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (i in e.target._eventParents) {
@@ -282,90 +283,90 @@
                         <td colspan="2">' + (feature.properties['DIST_NAME'] !== null ? autolinker.link(feature.properties['DIST_NAME'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Median Household Income ($)</th>\
-                        <td>' + (feature.properties['Income by Location_Household Income by Race'] !== null ? autolinker.link(feature.properties['Income by Location_Household Income by Race'].toLocaleString()) : '') + '</td>\
+                        <th scope="row">Total Vacant Housing Units</th>\
+                        <td>' + (feature.properties['Median Income-Rent-Vacancies_Total Vacant Housing Units'] !== null ? autolinker.link(feature.properties['Median Income-Rent-Vacancies_Total Vacant Housing Units'].toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_HOUSEHOLDINCOME_2_0(feature) {
-            if (feature.properties['Income by Location_Household Income by Race'] >= 16680.000000 && feature.properties['Income by Location_Household Income by Race'] <= 30791.000000 ) {
+        function style_VACANTHOUSINGUNITS_2_0(feature) {
+            if (feature.properties['q2wHide_Median Income-Rent-Vacancies_Vacant Units for Rent'] >= 0.000000 && feature.properties['q2wHide_Median Income-Rent-Vacancies_Vacant Units for Rent'] <= 9.500000 ) {
                 return {
-                pane: 'pane_HOUSEHOLDINCOME_2',
-                stroke: false, 
+                pane: 'pane_VACANTHOUSINGUNITS_2',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(221,237,253,1.0)',
+                fillColor: 'rgba(250,235,221,1.0)',
                 interactive: true,
             }
             }
-            if (feature.properties['Income by Location_Household Income by Race'] >= 30791.000000 && feature.properties['Income by Location_Household Income by Race'] <= 38438.000000 ) {
+            if (feature.properties['q2wHide_Median Income-Rent-Vacancies_Vacant Units for Rent'] >= 9.500000 && feature.properties['q2wHide_Median Income-Rent-Vacancies_Vacant Units for Rent'] <= 32.500000 ) {
                 return {
-                pane: 'pane_HOUSEHOLDINCOME_2',
-                stroke: false, 
+                pane: 'pane_VACANTHOUSINGUNITS_2',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(180,209,236,1.0)',
+                fillColor: 'rgba(241,97,68,1.0)',
                 interactive: true,
             }
             }
-            if (feature.properties['Income by Location_Household Income by Race'] >= 38438.000000 && feature.properties['Income by Location_Household Income by Race'] <= 50066.500000 ) {
+            if (feature.properties['q2wHide_Median Income-Rent-Vacancies_Vacant Units for Rent'] >= 32.500000 && feature.properties['q2wHide_Median Income-Rent-Vacancies_Vacant Units for Rent'] <= 60.500000 ) {
                 return {
-                pane: 'pane_HOUSEHOLDINCOME_2',
-                stroke: false, 
+                pane: 'pane_VACANTHOUSINGUNITS_2',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(154,200,224,1.0)',
+                fillColor: 'rgba(133,30,90,1.0)',
                 interactive: true,
             }
             }
-            if (feature.properties['Income by Location_Household Income by Race'] >= 50066.500000 && feature.properties['Income by Location_Household Income by Race'] <= 63052.000000 ) {
+            if (feature.properties['q2wHide_Median Income-Rent-Vacancies_Vacant Units for Rent'] >= 60.500000 && feature.properties['q2wHide_Median Income-Rent-Vacancies_Vacant Units for Rent'] <= 255.000000 ) {
                 return {
-                pane: 'pane_HOUSEHOLDINCOME_2',
-                stroke: false, 
+                pane: 'pane_VACANTHOUSINGUNITS_2',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(82,157,204,1.0)',
-                interactive: true,
-            }
-            }
-            if (feature.properties['Income by Location_Household Income by Race'] >= 63052.000000 && feature.properties['Income by Location_Household Income by Race'] <= 94518.000000 ) {
-                return {
-                pane: 'pane_HOUSEHOLDINCOME_2',
-                stroke: false, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(29,108,177,1.0)',
-                interactive: true,
-            }
-            }
-            if (feature.properties['Income by Location_Household Income by Race'] >= 94518.000000 && feature.properties['Income by Location_Household Income by Race'] <= 217000.000000 ) {
-                return {
-                pane: 'pane_HOUSEHOLDINCOME_2',
-                stroke: false, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(8,48,107,1.0)',
+                fillColor: 'rgba(3,5,26,1.0)',
                 interactive: true,
             }
             }
         }
-        map.createPane('pane_HOUSEHOLDINCOME_2');
-        map.getPane('pane_HOUSEHOLDINCOME_2').style.zIndex = 402;
-        map.getPane('pane_HOUSEHOLDINCOME_2').style['mix-blend-mode'] = 'normal';
-        var layer_HOUSEHOLDINCOME_2 = new L.geoJson(json_HOUSEHOLDINCOME_2, {
+        map.createPane('pane_VACANTHOUSINGUNITS_2');
+        map.getPane('pane_VACANTHOUSINGUNITS_2').style.zIndex = 402;
+        map.getPane('pane_VACANTHOUSINGUNITS_2').style['mix-blend-mode'] = 'normal';
+        var layer_VACANTHOUSINGUNITS_2 = new L.geoJson(json_VACANTHOUSINGUNITS_2, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_HOUSEHOLDINCOME_2',
-            layerName: 'layer_HOUSEHOLDINCOME_2',
-            pane: 'pane_HOUSEHOLDINCOME_2',
-            onEachFeature: pop_HOUSEHOLDINCOME_2,
-            style: style_HOUSEHOLDINCOME_2_0,
+            dataVar: 'json_VACANTHOUSINGUNITS_2',
+            layerName: 'layer_VACANTHOUSINGUNITS_2',
+            pane: 'pane_VACANTHOUSINGUNITS_2',
+            onEachFeature: pop_VACANTHOUSINGUNITS_2,
+            style: style_VACANTHOUSINGUNITS_2_0,
         });
-        bounds_group.addLayer(layer_HOUSEHOLDINCOME_2);
-        map.addLayer(layer_HOUSEHOLDINCOME_2);
-        function pop_RENTEROROWNER_3(feature, layer) {
+        bounds_group.addLayer(layer_VACANTHOUSINGUNITS_2);
+        map.addLayer(layer_VACANTHOUSINGUNITS_2);
+        function pop_MEDIANHOUSEHOLDINCOME_3(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (i in e.target._eventParents) {
@@ -376,79 +377,262 @@
             });
             var popupContent = '<table>\
                     <tr>\
-                        <th scope="row">Total Housing Units</th>\
-                        <td>' + (feature.properties['renter-v-owner-data-perc_abridged_Estimate Total Occupied Housing Units'] !== null ? autolinker.link(feature.properties['renter-v-owner-data-perc_abridged_Estimate Total Occupied Housing Units'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['DIST_NAME'] !== null ? autolinker.link(feature.properties['DIST_NAME'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Owner Occupied (%)</th>\
-                        <td>' + (feature.properties['renter-v-owner-data-perc_abridged_Percent Owner-Occupied'] !== null ? autolinker.link(feature.properties['renter-v-owner-data-perc_abridged_Percent Owner-Occupied'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">Renter Occupied (%)</th>\
-                        <td>' + (feature.properties['renter-v-owner-data-perc_abridged_Percent Renter-Occupied'] !== null ? autolinker.link(feature.properties['renter-v-owner-data-perc_abridged_Percent Renter-Occupied'].toLocaleString()) : '') + '</td>\
+                        <th scope="row">Median Annual Household Income ($)</th>\
+                        <td>' + (feature.properties['Median Income-Rent-Vacancies_Median Household Income'] !== null ? autolinker.link(feature.properties['Median Income-Rent-Vacancies_Median Household Income'].toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_RENTEROROWNER_3_0(feature) {
-            if (feature.properties['renter-v-owner-data-perc_abridged_Percent Owner-Occupied'] >= 0.000000 && feature.properties['renter-v-owner-data-perc_abridged_Percent Owner-Occupied'] <= 49.900000 ) {
+        function style_MEDIANHOUSEHOLDINCOME_3_0(feature) {
+            if (feature.properties['Median Income-Rent-Vacancies_Median Household Income'] >= 0.000000 && feature.properties['Median Income-Rent-Vacancies_Median Household Income'] <= 20839.000000 ) {
                 return {
-                pane: 'pane_RENTEROROWNER_3',
+                pane: 'pane_MEDIANHOUSEHOLDINCOME_3',
                 opacity: 1,
-                color: 'rgba(2,130,2,0.8)',
-                dashArray: '10,5',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fillOpacity: 0,
-                interactive: true,
-            }
-            }
-            if (feature.properties['renter-v-owner-data-perc_abridged_Percent Owner-Occupied'] >= 49.900000 && feature.properties['renter-v-owner-data-perc_abridged_Percent Owner-Occupied'] <= 50.100000 ) {
-                return {
-                pane: 'pane_RENTEROROWNER_3',
-                opacity: 1,
-                color: 'rgba(220,202,0,0.8)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fillOpacity: 0,
-                interactive: true,
-            }
-            }
-            if (feature.properties['renter-v-owner-data-perc_abridged_Percent Owner-Occupied'] >= 50.100000 && feature.properties['renter-v-owner-data-perc_abridged_Percent Owner-Occupied'] <= 100.000000 ) {
-                return {
-                pane: 'pane_RENTEROROWNER_3',
-                opacity: 1,
-                color: 'rgba(2,130,2,0.8)',
+                color: 'rgba(8,48,108,1.0)',
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(2,130,2,0.8)',
+                fillColor: 'rgba(247,251,255,1.0)',
+                interactive: true,
+            }
+            }
+            if (feature.properties['Median Income-Rent-Vacancies_Median Household Income'] >= 20839.000000 && feature.properties['Median Income-Rent-Vacancies_Median Household Income'] <= 49371.000000 ) {
+                return {
+                pane: 'pane_MEDIANHOUSEHOLDINCOME_3',
+                opacity: 1,
+                color: 'rgba(8,48,108,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(209,226,243,1.0)',
+                interactive: true,
+            }
+            }
+            if (feature.properties['Median Income-Rent-Vacancies_Median Household Income'] >= 49371.000000 && feature.properties['Median Income-Rent-Vacancies_Median Household Income'] <= 63644.000000 ) {
+                return {
+                pane: 'pane_MEDIANHOUSEHOLDINCOME_3',
+                opacity: 1,
+                color: 'rgba(8,48,108,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(154,200,224,1.0)',
+                interactive: true,
+            }
+            }
+            if (feature.properties['Median Income-Rent-Vacancies_Median Household Income'] >= 63644.000000 && feature.properties['Median Income-Rent-Vacancies_Median Household Income'] <= 78765.000000 ) {
+                return {
+                pane: 'pane_MEDIANHOUSEHOLDINCOME_3',
+                opacity: 1,
+                color: 'rgba(8,48,108,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(82,157,204,1.0)',
+                interactive: true,
+            }
+            }
+            if (feature.properties['Median Income-Rent-Vacancies_Median Household Income'] >= 78765.000000 && feature.properties['Median Income-Rent-Vacancies_Median Household Income'] <= 154586.000000 ) {
+                return {
+                pane: 'pane_MEDIANHOUSEHOLDINCOME_3',
+                opacity: 1,
+                color: 'rgba(8,48,108,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(29,108,177,1.0)',
+                interactive: true,
+            }
+            }
+            if (feature.properties['Median Income-Rent-Vacancies_Median Household Income'] >= 154586.000000 && feature.properties['Median Income-Rent-Vacancies_Median Household Income'] <= 250001.000000 ) {
+                return {
+                pane: 'pane_MEDIANHOUSEHOLDINCOME_3',
+                opacity: 1,
+                color: 'rgba(8,48,108,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(8,48,108,1.0)',
                 interactive: true,
             }
             }
         }
-        map.createPane('pane_RENTEROROWNER_3');
-        map.getPane('pane_RENTEROROWNER_3').style.zIndex = 403;
-        map.getPane('pane_RENTEROROWNER_3').style['mix-blend-mode'] = 'normal';
-        var layer_RENTEROROWNER_3 = new L.geoJson(json_RENTEROROWNER_3, {
+        map.createPane('pane_MEDIANHOUSEHOLDINCOME_3');
+        map.getPane('pane_MEDIANHOUSEHOLDINCOME_3').style.zIndex = 403;
+        map.getPane('pane_MEDIANHOUSEHOLDINCOME_3').style['mix-blend-mode'] = 'normal';
+        var layer_MEDIANHOUSEHOLDINCOME_3 = new L.geoJson(json_MEDIANHOUSEHOLDINCOME_3, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_RENTEROROWNER_3',
-            layerName: 'layer_RENTEROROWNER_3',
-            pane: 'pane_RENTEROROWNER_3',
-            onEachFeature: pop_RENTEROROWNER_3,
-            style: style_RENTEROROWNER_3_0,
+            dataVar: 'json_MEDIANHOUSEHOLDINCOME_3',
+            layerName: 'layer_MEDIANHOUSEHOLDINCOME_3',
+            pane: 'pane_MEDIANHOUSEHOLDINCOME_3',
+            onEachFeature: pop_MEDIANHOUSEHOLDINCOME_3,
+            style: style_MEDIANHOUSEHOLDINCOME_3_0,
         });
-        bounds_group.addLayer(layer_RENTEROROWNER_3);
-        map.addLayer(layer_RENTEROROWNER_3);
-        function pop_DEMOGRAPHICS_4(feature, layer) {
+        bounds_group.addLayer(layer_MEDIANHOUSEHOLDINCOME_3);
+        map.addLayer(layer_MEDIANHOUSEHOLDINCOME_3);
+        function pop_RENTBURDEN_4(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['DIST_NAME'] !== null ? autolinker.link(feature.properties['DIST_NAME'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Total Renter Occupied Units</th>\
+                        <td>' + (feature.properties['rent-burden_gross-rent-percentage_Total Renter Occupied Units'] !== null ? autolinker.link(feature.properties['rent-burden_gross-rent-percentage_Total Renter Occupied Units'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">% Rent-Burdened Renters (spend 30-49% income on rent)</th>\
+                        <td>' + (feature.properties['rent-burden_gross-rent-percentage_Percent Rent-Burdened'] !== null ? autolinker.link(feature.properties['rent-burden_gross-rent-percentage_Percent Rent-Burdened'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">% Severely Rent-Burdened Renters (spend 50% or more income on rent)</th>\
+                        <td>' + (feature.properties['rent-burden_gross-rent-percentage_Percent Severely Rent-Burdened'] !== null ? autolinker.link(feature.properties['rent-burden_gross-rent-percentage_Percent Severely Rent-Burdened'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Total % Rent-Burdened & Severely Rent-Burdened Renters</th>\
+                        <td>' + (feature.properties['rent-burden_gross-rent-percentage_Percent Rent-Burdened and Severely Rent-Burdened'] !== null ? autolinker.link(feature.properties['rent-burden_gross-rent-percentage_Percent Rent-Burdened and Severely Rent-Burdened'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_RENTBURDEN_4_0(feature) {
+            if (feature.properties['q2wHide_rent-burden_gross-rent-percentage_30 Percent or More Income on Rent'] >= 0.000000 && feature.properties['q2wHide_rent-burden_gross-rent-percentage_30 Percent or More Income on Rent'] <= 143.500000 ) {
+                return {
+                pane: 'pane_RENTBURDEN_4',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(255,255,255,1.0)',
+                interactive: true,
+            }
+            }
+            if (feature.properties['q2wHide_rent-burden_gross-rent-percentage_30 Percent or More Income on Rent'] >= 143.500000 && feature.properties['q2wHide_rent-burden_gross-rent-percentage_30 Percent or More Income on Rent'] <= 269.000000 ) {
+                return {
+                pane: 'pane_RENTBURDEN_4',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(255,204,204,1.0)',
+                interactive: true,
+            }
+            }
+            if (feature.properties['q2wHide_rent-burden_gross-rent-percentage_30 Percent or More Income on Rent'] >= 269.000000 && feature.properties['q2wHide_rent-burden_gross-rent-percentage_30 Percent or More Income on Rent'] <= 385.500000 ) {
+                return {
+                pane: 'pane_RENTBURDEN_4',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(255,153,153,1.0)',
+                interactive: true,
+            }
+            }
+            if (feature.properties['q2wHide_rent-burden_gross-rent-percentage_30 Percent or More Income on Rent'] >= 385.500000 && feature.properties['q2wHide_rent-burden_gross-rent-percentage_30 Percent or More Income on Rent'] <= 491.000000 ) {
+                return {
+                pane: 'pane_RENTBURDEN_4',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(255,102,102,1.0)',
+                interactive: true,
+            }
+            }
+            if (feature.properties['q2wHide_rent-burden_gross-rent-percentage_30 Percent or More Income on Rent'] >= 491.000000 && feature.properties['q2wHide_rent-burden_gross-rent-percentage_30 Percent or More Income on Rent'] <= 635.000000 ) {
+                return {
+                pane: 'pane_RENTBURDEN_4',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(255,51,51,1.0)',
+                interactive: true,
+            }
+            }
+            if (feature.properties['q2wHide_rent-burden_gross-rent-percentage_30 Percent or More Income on Rent'] >= 635.000000 && feature.properties['q2wHide_rent-burden_gross-rent-percentage_30 Percent or More Income on Rent'] <= 1077.000000 ) {
+                return {
+                pane: 'pane_RENTBURDEN_4',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(255,0,0,1.0)',
+                interactive: true,
+            }
+            }
+        }
+        map.createPane('pane_RENTBURDEN_4');
+        map.getPane('pane_RENTBURDEN_4').style.zIndex = 404;
+        map.getPane('pane_RENTBURDEN_4').style['mix-blend-mode'] = 'normal';
+        var layer_RENTBURDEN_4 = new L.geoJson(json_RENTBURDEN_4, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_RENTBURDEN_4',
+            layerName: 'layer_RENTBURDEN_4',
+            pane: 'pane_RENTBURDEN_4',
+            onEachFeature: pop_RENTBURDEN_4,
+            style: style_RENTBURDEN_4_0,
+        });
+        bounds_group.addLayer(layer_RENTBURDEN_4);
+        map.addLayer(layer_RENTBURDEN_4);
+        function pop_DEMOGRAPHICS_5(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (i in e.target._eventParents) {
@@ -497,10 +681,10 @@
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_DEMOGRAPHICS_4_0(feature) {
+        function style_DEMOGRAPHICS_5_0(feature) {
             if (feature.properties['race_acs-5yr2022_abriged_Percent White'] >= 3.000000 && feature.properties['race_acs-5yr2022_abriged_Percent White'] <= 49.900000 ) {
                 return {
-                pane: 'pane_DEMOGRAPHICS_4',
+                pane: 'pane_DEMOGRAPHICS_5',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '1,5',
@@ -513,7 +697,7 @@
             }
             if (feature.properties['race_acs-5yr2022_abriged_Percent White'] >= 49.900000 && feature.properties['race_acs-5yr2022_abriged_Percent White'] <= 50.000000 ) {
                 return {
-                pane: 'pane_DEMOGRAPHICS_4',
+                pane: 'pane_DEMOGRAPHICS_5',
                 opacity: 1,
                 color: 'rgba(255,80,255,1.0)',
                 dashArray: '',
@@ -526,7 +710,7 @@
             }
             if (feature.properties['race_acs-5yr2022_abriged_Percent White'] >= 50.000000 && feature.properties['race_acs-5yr2022_abriged_Percent White'] <= 100.000000 ) {
                 return {
-                pane: 'pane_DEMOGRAPHICS_4',
+                pane: 'pane_DEMOGRAPHICS_5',
                 opacity: 1,
                 color: 'rgba(255,80,255,1.0)',
                 dashArray: '',
@@ -538,21 +722,21 @@
             }
             }
         }
-        map.createPane('pane_DEMOGRAPHICS_4');
-        map.getPane('pane_DEMOGRAPHICS_4').style.zIndex = 404;
-        map.getPane('pane_DEMOGRAPHICS_4').style['mix-blend-mode'] = 'normal';
-        var layer_DEMOGRAPHICS_4 = new L.geoJson(json_DEMOGRAPHICS_4, {
+        map.createPane('pane_DEMOGRAPHICS_5');
+        map.getPane('pane_DEMOGRAPHICS_5').style.zIndex = 405;
+        map.getPane('pane_DEMOGRAPHICS_5').style['mix-blend-mode'] = 'normal';
+        var layer_DEMOGRAPHICS_5 = new L.geoJson(json_DEMOGRAPHICS_5, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_DEMOGRAPHICS_4',
-            layerName: 'layer_DEMOGRAPHICS_4',
-            pane: 'pane_DEMOGRAPHICS_4',
-            onEachFeature: pop_DEMOGRAPHICS_4,
-            style: style_DEMOGRAPHICS_4_0,
+            dataVar: 'json_DEMOGRAPHICS_5',
+            layerName: 'layer_DEMOGRAPHICS_5',
+            pane: 'pane_DEMOGRAPHICS_5',
+            onEachFeature: pop_DEMOGRAPHICS_5,
+            style: style_DEMOGRAPHICS_5_0,
         });
-        bounds_group.addLayer(layer_DEMOGRAPHICS_4);
-        map.addLayer(layer_DEMOGRAPHICS_4);
-        function pop_VENTURES_5(feature, layer) {
+        bounds_group.addLayer(layer_DEMOGRAPHICS_5);
+        map.addLayer(layer_DEMOGRAPHICS_5);
+        function pop_VENTURES_6(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (i in e.target._eventParents) {
@@ -581,9 +765,9 @@
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_VENTURES_5_0() {
+        function style_VENTURES_6_0() {
             return {
-                pane: 'pane_VENTURES_5',
+                pane: 'pane_VENTURES_6',
                 radius: 8.0,
                 opacity: 1,
                 color: 'rgba(117,58,128,1.0)',
@@ -597,31 +781,31 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_VENTURES_5');
-        map.getPane('pane_VENTURES_5').style.zIndex = 405;
-        map.getPane('pane_VENTURES_5').style['mix-blend-mode'] = 'normal';
-        var layer_VENTURES_5 = new L.geoJson(json_VENTURES_5, {
+        map.createPane('pane_VENTURES_6');
+        map.getPane('pane_VENTURES_6').style.zIndex = 406;
+        map.getPane('pane_VENTURES_6').style['mix-blend-mode'] = 'normal';
+        var layer_VENTURES_6 = new L.geoJson(json_VENTURES_6, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_VENTURES_5',
-            layerName: 'layer_VENTURES_5',
-            pane: 'pane_VENTURES_5',
-            onEachFeature: pop_VENTURES_5,
+            dataVar: 'json_VENTURES_6',
+            layerName: 'layer_VENTURES_6',
+            pane: 'pane_VENTURES_6',
+            onEachFeature: pop_VENTURES_6,
             pointToLayer: function (feature, latlng) {
                 var context = {
                     feature: feature,
                     variables: {}
                 };
-                return L.circleMarker(latlng, style_VENTURES_5_0(feature));
+                return L.circleMarker(latlng, style_VENTURES_6_0(feature));
             },
         });
-        var cluster_VENTURES_5 = new L.MarkerClusterGroup({showCoverageOnHover: false,
+        var cluster_VENTURES_6 = new L.MarkerClusterGroup({showCoverageOnHover: false,
             spiderfyDistanceMultiplier: 2});
-        cluster_VENTURES_5.addLayer(layer_VENTURES_5);
+        cluster_VENTURES_6.addLayer(layer_VENTURES_6);
 
-        bounds_group.addLayer(layer_VENTURES_5);
-        cluster_VENTURES_5.addTo(map);
-        function pop_INVESTMENT_6(feature, layer) {
+        bounds_group.addLayer(layer_VENTURES_6);
+        cluster_VENTURES_6.addTo(map);
+        function pop_INVESTMENT_7(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (i in e.target._eventParents) {
@@ -650,9 +834,9 @@
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_INVESTMENT_6_0() {
+        function style_INVESTMENT_7_0() {
             return {
-                pane: 'pane_INVESTMENT_6',
+                pane: 'pane_INVESTMENT_7',
                 radius: 8.0,
                 opacity: 1,
                 color: 'rgba(50,87,128,1.0)',
@@ -666,31 +850,31 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_INVESTMENT_6');
-        map.getPane('pane_INVESTMENT_6').style.zIndex = 406;
-        map.getPane('pane_INVESTMENT_6').style['mix-blend-mode'] = 'normal';
-        var layer_INVESTMENT_6 = new L.geoJson(json_INVESTMENT_6, {
+        map.createPane('pane_INVESTMENT_7');
+        map.getPane('pane_INVESTMENT_7').style.zIndex = 407;
+        map.getPane('pane_INVESTMENT_7').style['mix-blend-mode'] = 'normal';
+        var layer_INVESTMENT_7 = new L.geoJson(json_INVESTMENT_7, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_INVESTMENT_6',
-            layerName: 'layer_INVESTMENT_6',
-            pane: 'pane_INVESTMENT_6',
-            onEachFeature: pop_INVESTMENT_6,
+            dataVar: 'json_INVESTMENT_7',
+            layerName: 'layer_INVESTMENT_7',
+            pane: 'pane_INVESTMENT_7',
+            onEachFeature: pop_INVESTMENT_7,
             pointToLayer: function (feature, latlng) {
                 var context = {
                     feature: feature,
                     variables: {}
                 };
-                return L.circleMarker(latlng, style_INVESTMENT_6_0(feature));
+                return L.circleMarker(latlng, style_INVESTMENT_7_0(feature));
             },
         });
-        var cluster_INVESTMENT_6 = new L.MarkerClusterGroup({showCoverageOnHover: false,
+        var cluster_INVESTMENT_7 = new L.MarkerClusterGroup({showCoverageOnHover: false,
             spiderfyDistanceMultiplier: 2});
-        cluster_INVESTMENT_6.addLayer(layer_INVESTMENT_6);
+        cluster_INVESTMENT_7.addLayer(layer_INVESTMENT_7);
 
-        bounds_group.addLayer(layer_INVESTMENT_6);
-        cluster_INVESTMENT_6.addTo(map);
-        function pop_SHELL_7(feature, layer) {
+        bounds_group.addLayer(layer_INVESTMENT_7);
+        cluster_INVESTMENT_7.addTo(map);
+        function pop_SHELL_8(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (i in e.target._eventParents) {
@@ -719,9 +903,9 @@
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_SHELL_7_0() {
+        function style_SHELL_8_0() {
             return {
-                pane: 'pane_SHELL_7',
+                pane: 'pane_SHELL_8',
                 radius: 8.0,
                 opacity: 1,
                 color: 'rgba(247,225,55,1.0)',
@@ -735,31 +919,31 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_SHELL_7');
-        map.getPane('pane_SHELL_7').style.zIndex = 407;
-        map.getPane('pane_SHELL_7').style['mix-blend-mode'] = 'normal';
-        var layer_SHELL_7 = new L.geoJson(json_SHELL_7, {
+        map.createPane('pane_SHELL_8');
+        map.getPane('pane_SHELL_8').style.zIndex = 408;
+        map.getPane('pane_SHELL_8').style['mix-blend-mode'] = 'normal';
+        var layer_SHELL_8 = new L.geoJson(json_SHELL_8, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_SHELL_7',
-            layerName: 'layer_SHELL_7',
-            pane: 'pane_SHELL_7',
-            onEachFeature: pop_SHELL_7,
+            dataVar: 'json_SHELL_8',
+            layerName: 'layer_SHELL_8',
+            pane: 'pane_SHELL_8',
+            onEachFeature: pop_SHELL_8,
             pointToLayer: function (feature, latlng) {
                 var context = {
                     feature: feature,
                     variables: {}
                 };
-                return L.circleMarker(latlng, style_SHELL_7_0(feature));
+                return L.circleMarker(latlng, style_SHELL_8_0(feature));
             },
         });
-        var cluster_SHELL_7 = new L.MarkerClusterGroup({showCoverageOnHover: false,
+        var cluster_SHELL_8 = new L.MarkerClusterGroup({showCoverageOnHover: false,
             spiderfyDistanceMultiplier: 2});
-        cluster_SHELL_7.addLayer(layer_SHELL_7);
+        cluster_SHELL_8.addLayer(layer_SHELL_8);
 
-        bounds_group.addLayer(layer_SHELL_7);
-        cluster_SHELL_7.addTo(map);
-        function pop_PORTFOLIO_8(feature, layer) {
+        bounds_group.addLayer(layer_SHELL_8);
+        cluster_SHELL_8.addTo(map);
+        function pop_PORTFOLIO_9(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (i in e.target._eventParents) {
@@ -788,9 +972,9 @@
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_PORTFOLIO_8_0() {
+        function style_PORTFOLIO_9_0() {
             return {
-                pane: 'pane_PORTFOLIO_8',
+                pane: 'pane_PORTFOLIO_9',
                 radius: 8.0,
                 opacity: 1,
                 color: 'rgba(179,92,21,1.0)',
@@ -804,30 +988,30 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_PORTFOLIO_8');
-        map.getPane('pane_PORTFOLIO_8').style.zIndex = 408;
-        map.getPane('pane_PORTFOLIO_8').style['mix-blend-mode'] = 'normal';
-        var layer_PORTFOLIO_8 = new L.geoJson(json_PORTFOLIO_8, {
+        map.createPane('pane_PORTFOLIO_9');
+        map.getPane('pane_PORTFOLIO_9').style.zIndex = 409;
+        map.getPane('pane_PORTFOLIO_9').style['mix-blend-mode'] = 'normal';
+        var layer_PORTFOLIO_9 = new L.geoJson(json_PORTFOLIO_9, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_PORTFOLIO_8',
-            layerName: 'layer_PORTFOLIO_8',
-            pane: 'pane_PORTFOLIO_8',
-            onEachFeature: pop_PORTFOLIO_8,
+            dataVar: 'json_PORTFOLIO_9',
+            layerName: 'layer_PORTFOLIO_9',
+            pane: 'pane_PORTFOLIO_9',
+            onEachFeature: pop_PORTFOLIO_9,
             pointToLayer: function (feature, latlng) {
                 var context = {
                     feature: feature,
                     variables: {}
                 };
-                return L.circleMarker(latlng, style_PORTFOLIO_8_0(feature));
+                return L.circleMarker(latlng, style_PORTFOLIO_9_0(feature));
             },
         });
-        var cluster_PORTFOLIO_8 = new L.MarkerClusterGroup({showCoverageOnHover: false,
+        var cluster_PORTFOLIO_9 = new L.MarkerClusterGroup({showCoverageOnHover: false,
             spiderfyDistanceMultiplier: 2});
-        cluster_PORTFOLIO_8.addLayer(layer_PORTFOLIO_8);
+        cluster_PORTFOLIO_9.addLayer(layer_PORTFOLIO_9);
 
-        bounds_group.addLayer(layer_PORTFOLIO_8);
-        cluster_PORTFOLIO_8.addTo(map);
+        bounds_group.addLayer(layer_PORTFOLIO_9);
+        cluster_PORTFOLIO_9.addTo(map);
             var title = new L.Control();
             title.onAdd = function (map) {
                 this._div = L.DomUtil.create('div', 'info');
@@ -856,7 +1040,7 @@
                 abstract.show = function () {
                     this._div.classList.remove("abstract");
                     this._div.classList.add("abstractUncollapsed");
-                    this._div.innerHTML = '"Who Owns Oakland" is part of the <a href="https://www.archiveofurbanfutures.org/" rel="noopener" target="_blank">Archive of Urban Futures</a>,  a collaborative project with Moms 4 Housing and UC Berkeley.  Property ownership data retrieved from the Alameda County Assessor\'s Office,  Fiscal Year 2022.  Demographic data & renter/owner data retrieved from ACS 5-year estimates,  2022.  Median household income retrieved from ACS 5-year estimates,  2021.  Respiratory risk data retrieved from USEPA 2014 National-Scale Air Toxics Assessment.';
+                    this._div.innerHTML = '"Who Owns Oakland" is a part of the  <a href=“http://https://archiveofurbanfutures.org/”>Archive of Urban Futures</a>,  a collaborative project with Moms 4 Housing.  Property ownership data retrieved from the Alameda County Assessor\'s Office,  Fiscal Year 2022.  Demographic data & renter/owner data retrieved from ACS 5-year estimates,  2022.  Household income retrieved from ACS 5-year estimates,  2021.  Respiratory risk data retrieved from USEPA 2014 National-Scale Air Toxics Assessment.';
             };
             abstract.addTo(map);
         var osmGeocoder = new L.Control.Geocoder({
@@ -870,7 +1054,7 @@
         document.getElementsByClassName('leaflet-control-geocoder-icon')[0]
         .title += 'Search for a place';
         var baseMaps = {};
-        L.control.layers(baseMaps,{'<img src="legend/PORTFOLIO_8.png" /> PORTFOLIO': cluster_PORTFOLIO_8,'<img src="legend/SHELL_7.png" /> SHELL': cluster_SHELL_7,'<img src="legend/INVESTMENT_6.png" /> INVESTMENT': cluster_INVESTMENT_6,'<img src="legend/VENTURES_5.png" /> VENTURES': cluster_VENTURES_5,'DEMOGRAPHICS<br /><table><tr><td style="text-align: center;"><img src="legend/DEMOGRAPHICS_4_50White0.png" /></td><td>< 50% White</td></tr><tr><td style="text-align: center;"><img src="legend/DEMOGRAPHICS_4_50White1.png" /></td><td>50% White</td></tr><tr><td style="text-align: center;"><img src="legend/DEMOGRAPHICS_4_50White2.png" /></td><td>> 50% White</td></tr></table>': layer_DEMOGRAPHICS_4,'RENTER OR OWNER?<br /><table><tr><td style="text-align: center;"><img src="legend/RENTEROROWNER_3_PrimarilyRenterOccupied0.png" /></td><td>Primarily Renter Occupied</td></tr><tr><td style="text-align: center;"><img src="legend/RENTEROROWNER_3_5050RenterOwners1.png" /></td><td>50-50 Renter-Owners</td></tr><tr><td style="text-align: center;"><img src="legend/RENTEROROWNER_3_PrimarilyOwnerOccupied2.png" /></td><td>Primarily Owner Occupied</td></tr></table>': layer_RENTEROROWNER_3,'HOUSEHOLD INCOME<br /><table><tr><td style="text-align: center;"><img src="legend/HOUSEHOLDINCOME_2_16680307910.png" /></td><td>$16,680 - $30,791</td></tr><tr><td style="text-align: center;"><img src="legend/HOUSEHOLDINCOME_2_30791384381.png" /></td><td>$30,791 - $38,438</td></tr><tr><td style="text-align: center;"><img src="legend/HOUSEHOLDINCOME_2_38438500672.png" /></td><td>$38,438 - $50,067</td></tr><tr><td style="text-align: center;"><img src="legend/HOUSEHOLDINCOME_2_50067630523.png" /></td><td>$50,067 - $63,052</td></tr><tr><td style="text-align: center;"><img src="legend/HOUSEHOLDINCOME_2_63052945184.png" /></td><td>$63,052 - $94,518</td></tr><tr><td style="text-align: center;"><img src="legend/HOUSEHOLDINCOME_2_945182170005.png" /></td><td>$94,518 - $217,000</td></tr></table>': layer_HOUSEHOLDINCOME_2,'EPA RESPIRATORY RISK<br /><table><tr><td style="text-align: center;"><img src="legend/EPARESPIRATORYRISK_1_254725820.png" /></td><td>25.47 - 25.82</td></tr><tr><td style="text-align: center;"><img src="legend/EPARESPIRATORYRISK_1_258226081.png" /></td><td>25.82 - 26.08</td></tr><tr><td style="text-align: center;"><img src="legend/EPARESPIRATORYRISK_1_26082652.png" /></td><td>26.08 - 26.5</td></tr><tr><td style="text-align: center;"><img src="legend/EPARESPIRATORYRISK_1_26527293.png" /></td><td>26.5 - 27.29</td></tr><tr><td style="text-align: center;"><img src="legend/EPARESPIRATORYRISK_1_272927984.png" /></td><td>27.29 - 27.98</td></tr><tr><td style="text-align: center;"><img src="legend/EPARESPIRATORYRISK_1_279828575.png" /></td><td>27.98 - 28.57</td></tr><tr><td style="text-align: center;"><img src="legend/EPARESPIRATORYRISK_1_285728696.png" /></td><td>28.57 - 28.69</td></tr><tr><td style="text-align: center;"><img src="legend/EPARESPIRATORYRISK_1_286928967.png" /></td><td>28.69 - 28.96</td></tr><tr><td style="text-align: center;"><img src="legend/EPARESPIRATORYRISK_1_289629258.png" /></td><td>28.96 - 29.25</td></tr><tr><td style="text-align: center;"><img src="legend/EPARESPIRATORYRISK_1_292530499.png" /></td><td>29.25 - 30.49</td></tr></table>': layer_EPARESPIRATORYRISK_1,"Base Map": layer_BaseMap_0,}).addTo(map);
+        L.control.layers(baseMaps,{'<img src="legend/PORTFOLIO_9.png" /> PORTFOLIO': cluster_PORTFOLIO_9,'<img src="legend/SHELL_8.png" /> SHELL': cluster_SHELL_8,'<img src="legend/INVESTMENT_7.png" /> INVESTMENT': cluster_INVESTMENT_7,'<img src="legend/VENTURES_6.png" /> VENTURES': cluster_VENTURES_6,'DEMOGRAPHICS<br /><table><tr><td style="text-align: center;"><img src="legend/DEMOGRAPHICS_5_50White0.png" /></td><td>< 50% White</td></tr><tr><td style="text-align: center;"><img src="legend/DEMOGRAPHICS_5_50White1.png" /></td><td>50% White</td></tr><tr><td style="text-align: center;"><img src="legend/DEMOGRAPHICS_5_50White2.png" /></td><td>> 50% White</td></tr></table>': layer_DEMOGRAPHICS_5,'RENT BURDEN<br /><table><tr><td style="text-align: center;"><img src="legend/RENTBURDEN_4_0144housingunits0.png" /></td><td>0 - 144 housing units</td></tr><tr><td style="text-align: center;"><img src="legend/RENTBURDEN_4_144269housingunits1.png" /></td><td>144 - 269 housing units</td></tr><tr><td style="text-align: center;"><img src="legend/RENTBURDEN_4_269386housingunits2.png" /></td><td>269 - 386 housing units</td></tr><tr><td style="text-align: center;"><img src="legend/RENTBURDEN_4_386491housingunits3.png" /></td><td>386 - 491 housing units</td></tr><tr><td style="text-align: center;"><img src="legend/RENTBURDEN_4_491635housingunits4.png" /></td><td>491 - 635 housing units</td></tr><tr><td style="text-align: center;"><img src="legend/RENTBURDEN_4_6351077housingunits5.png" /></td><td>635 - 1077 housing units</td></tr></table>': layer_RENTBURDEN_4,'MEDIAN HOUSEHOLD INCOME<br /><table><tr><td style="text-align: center;"><img src="legend/MEDIANHOUSEHOLDINCOME_3_0208390.png" /></td><td>$0 - 20,839</td></tr><tr><td style="text-align: center;"><img src="legend/MEDIANHOUSEHOLDINCOME_3_20839493711.png" /></td><td>$20,839 - $49,371</td></tr><tr><td style="text-align: center;"><img src="legend/MEDIANHOUSEHOLDINCOME_3_49371636442.png" /></td><td>$49,371 - $63644</td></tr><tr><td style="text-align: center;"><img src="legend/MEDIANHOUSEHOLDINCOME_3_63644787653.png" /></td><td>$63,644 - $78,765</td></tr><tr><td style="text-align: center;"><img src="legend/MEDIANHOUSEHOLDINCOME_3_787651545864.png" /></td><td>$78,765 - $154,586</td></tr><tr><td style="text-align: center;"><img src="legend/MEDIANHOUSEHOLDINCOME_3_1545862500015.png" /></td><td>$154,586 - $250,001</td></tr></table>': layer_MEDIANHOUSEHOLDINCOME_3,'VACANT HOUSING UNITS<br /><table><tr><td style="text-align: center;"><img src="legend/VACANTHOUSINGUNITS_2_010units0.png" /></td><td>0 - 10 units</td></tr><tr><td style="text-align: center;"><img src="legend/VACANTHOUSINGUNITS_2_1032units1.png" /></td><td>10 - 32 units</td></tr><tr><td style="text-align: center;"><img src="legend/VACANTHOUSINGUNITS_2_3260units2.png" /></td><td>32 - 60 units</td></tr><tr><td style="text-align: center;"><img src="legend/VACANTHOUSINGUNITS_2_60255units3.png" /></td><td>60 - 255 units</td></tr></table>': layer_VACANTHOUSINGUNITS_2,'EPA RESPIRATORY RISK<br /><table><tr><td style="text-align: center;"><img src="legend/EPARESPIRATORYRISK_1_254725820.png" /></td><td>25.47 - 25.82</td></tr><tr><td style="text-align: center;"><img src="legend/EPARESPIRATORYRISK_1_258226081.png" /></td><td>25.82 - 26.08</td></tr><tr><td style="text-align: center;"><img src="legend/EPARESPIRATORYRISK_1_26082652.png" /></td><td>26.08 - 26.5</td></tr><tr><td style="text-align: center;"><img src="legend/EPARESPIRATORYRISK_1_26527293.png" /></td><td>26.5 - 27.29</td></tr><tr><td style="text-align: center;"><img src="legend/EPARESPIRATORYRISK_1_272927984.png" /></td><td>27.29 - 27.98</td></tr><tr><td style="text-align: center;"><img src="legend/EPARESPIRATORYRISK_1_279828575.png" /></td><td>27.98 - 28.57</td></tr><tr><td style="text-align: center;"><img src="legend/EPARESPIRATORYRISK_1_285728696.png" /></td><td>28.57 - 28.69</td></tr><tr><td style="text-align: center;"><img src="legend/EPARESPIRATORYRISK_1_286928967.png" /></td><td>28.69 - 28.96</td></tr><tr><td style="text-align: center;"><img src="legend/EPARESPIRATORYRISK_1_289629258.png" /></td><td>28.96 - 29.25</td></tr><tr><td style="text-align: center;"><img src="legend/EPARESPIRATORYRISK_1_292530499.png" /></td><td>29.25 - 30.49</td></tr></table>': layer_EPARESPIRATORYRISK_1,"Base Map": layer_BaseMap_0,}).addTo(map);
         setBounds();
         </script>
     </body>
